@@ -1,0 +1,23 @@
+# 113crossyroad
+My high level strategy was to first ask Gemini what Crossy Road is about, and what its details are, and then to create that in cmu_graphics. This ensures that it is first aware of what it is to create, such that when it actually tries to create the game, it has that response to refer to. I think it was overall pretty effective.
+NOTE: I got it to create a pretty decent 2D implementation in a short amount of time, so I further prompted it to translate it to 3D, which did not go as well: the 3D implementation was pretty bad and buggy, and required much more prompting to get anything even a little bit playable before the time limit was up. main1 is the 2D version which I would be more likely to put on a portfolio website or something, main2(bad).py is the 3D version.
+PROMPT HISTORY:
+-hey, can you tell me the objectives, design, features, and core gameplay aspects of crossy road?
+-are you able to code efffectively in cmu_graphics? 
+-excellent! i would like for you to implement crossy road in cmu_graphics, according to the gameplay features and stuff you told me about earlier. please closely adhere to those features, such that nothing substantial is left out of the game. you may at first implement it in 2D, if that makes your job easier.
+-please adhere closely to the CMU_graphics syntax. Rect is not a function in cmu_graphics. here is the documentation, for reference (such that you will no longer make these silly syntactical mistakes). https://academy.cs.cmu.edu/docs
+please do not change the code that you just wrote, other than fixing the errors and making it work in cmu_graphics. i want to first test out the game and then propose any possible changes.
+-NO!! app must be passed into every function that uses app. it is not globally defined. fix that
+-you CANNOT draw anything in any function other than redrawAll, or a function that redrawAll calls (that is also not one of the controller or model functions). this is critical. the app will not run otherwise, due to MVC violation
+-good work. i noticed some bugs, though. it is absolutely critical that you address each of these bugs in full.
+1) the player should not spawn where obstacles may be, so that the player cannot quickly die.
+2) the player should die when entering water.
+3) the player should "snap" between the lines, rather than the player always being on the intersection between lines. this ensures a more grid-like gameplay.
+-okay, this is great!, now try to make it look pseudo-3D-esque, just like the true crossy road. that adds a lot to the value of the gameplay. this image (image of crossy road) should help illustrate what that should look like.
+-make sure to only use fill colors from the cmu graphics documentation!!!!
+-give it more of the side-view. you just gave it shadows, you may have to use some more complicated math to give it the true 3D-esque look that the real crossy road has. u may have to use like linear algebra or something mr tuff
+-that didn't come out right. it looks like this , which is totally messed up. dont ask me why, thats your job
+-this is still messed up. and the player does not move beyond the first row.
+-that's better, but notice how in this screenshot the player is floating over top of the ground, rather than being on the ground. fix that too
+-now it looks like it is not on top of the block, but attached to the side. fix that as well. also notice how the cars have giant shadows and stuff, which is also not acceptable. please address this.
+**TIME LIMIT UP
